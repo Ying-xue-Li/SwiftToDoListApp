@@ -16,13 +16,26 @@ struct ToDoListView: View {
     init(userId: String){
         self.userId = userId
         // users/<id>/todos/<entries>
-        self._items = FirestoreQuery(collectionPath: "users/\(userId)/todos ")
+        // \(): insert a dynamic path, depends on the actual user id
+        self._items = FirestoreQuery(collectionPath: "users/\(userId)/todos")
     }
     
     var body: some View {
         NavigationView {
             VStack{
-                
+                List(items) { item in
+                    ToDoListItemView(item: item)
+                        .swipeActions {
+                            Button {
+                                viewModel.delete(itemId: item.id)
+                            } label: {
+//                                Text("Delete")
+                                Label("Delete", systemImage: "trash")
+                            }
+                            .tint(.red)
+                        }
+                }
+                .listStyle(.plain)
             }
             .navigationTitle("To Do List")
             .toolbar{
@@ -43,6 +56,6 @@ struct ToDoListView: View {
 
 struct ToDoListView_Previews: PreviewProvider {
     static var previews: some View {
-        ToDoListView(userId: "")
+        ToDoListView(userId: "iINszFKmpxQAZhbpnBSyj41Ld223")
     }
 }

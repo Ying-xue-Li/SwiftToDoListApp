@@ -8,4 +8,8 @@
 import Foundation
 class ProfileViewModel: ObservableObject{
     init(){}
+    
+    func setCheck(item: ToDoListItem){
+        
+    }
 }
