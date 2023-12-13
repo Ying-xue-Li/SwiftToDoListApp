@@ -1,4 +1,6 @@
-# SwiftToDoListApp
+<img width="151" alt="Screen Shot 2023-12-13 at 18 19 35" src="https://github.com/Lynneeeeee/SwiftToDoListApp/assets/118246943/1b07cfbe-26e6-4d96-a02d-da64b25fa9d4">
+
+# SwiftToDoListApp 
 A functional to do list ios app based on Swift(front-end), Xcode and Google Firebase(back-end).
 
 ## Features
@@ -26,7 +28,6 @@ An active Google Firebase project
 Launch the app on your iOS device or simulator.
 
 ## Screenshots
-<img width="60" alt="Screen Shot 2023-12-13 at 18 16 09" src="https://github.com/Lynneeeeee/SwiftToDoListApp/assets/118246943/36d47c12-0120-4df0-8dbb-aa269df97fbe">
 <img width="351" alt="Screen Shot 2023-12-13 at 18 04 40" src="https://github.com/Lynneeeeee/SwiftToDoListApp/assets/118246943/d1fd18dd-3391-4868-a3ec-4669292a3d8b">
 <img width="358" alt="Screen Shot 2023-12-13 at 18 05 09" src="https://github.com/Lynneeeeee/SwiftToDoListApp/assets/118246943/c3384584-c02d-4190-9614-64be55f9f455">
 <img width="363" alt="Screen Shot 2023-12-13 at 18 05 47" src="https://github.com/Lynneeeeee/SwiftToDoListApp/assets/118246943/c01e05cd-195f-40c8-88d6-aae0c1d8a833">
