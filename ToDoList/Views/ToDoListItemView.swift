@@ -9,18 +9,19 @@ import SwiftUI
 
 struct ToDoListItemView: View {
     let item: ToDoListItem
-    @State var viewModel = ProfileViewModel()
+    @State var viewModel = ToDoListItemViewModel ()
     
     var body: some View {
         HStack{
             VStack(alignment: .leading){
                 Text(item.title)
                     .font(.title2)
+                    .strikethrough(item.isDone, color: .black)
                 Text("\(Date(timeIntervalSince1970: item.dueDate).formatted(date: .abbreviated, time: .shortened))")
                     .font(.footnote)
                     .foregroundColor(.gray)
-//                    .foregroundColor(Color(.secondaryLabel))
             }
+            
             Spacer()
             
             Button {
@@ -28,10 +29,10 @@ struct ToDoListItemView: View {
                 viewModel.setCheck(item: item)
             } label: {
                 Image(systemName: item.isDone ? "checkmark.circle.fill" : "circle")
+                    .foregroundColor(.blue)
             }
-
+            
         }
-//        .padding()
     }
 }
 
