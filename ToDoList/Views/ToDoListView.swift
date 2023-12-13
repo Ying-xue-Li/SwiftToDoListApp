@@ -8,7 +8,7 @@ import FirebaseFirestoreSwift
 import SwiftUI
 
 struct ToDoListView: View {
-    @StateObject var viewModel = ToDoListViewModel()
+    @StateObject var viewModel: ToDoListViewModel
     @FirestoreQuery var items: [ToDoListItem]
     
     private let userId: String
@@ -16,8 +16,11 @@ struct ToDoListView: View {
     init(userId: String){
         self.userId = userId
         // users/<id>/todos/<entries>
+        
         // \(): insert a dynamic path, depends on the actual user id
+        // underline means it's private and not suggested to access from outside
         self._items = FirestoreQuery(collectionPath: "users/\(userId)/todos")
+        self._viewModel = StateObject(wrappedValue: ToDoListViewModel(userId: userId))
     }
     
     var body: some View {
